@@ -5,17 +5,25 @@ var axios = require("axios");
 var fs = require("fs");
 
 //var spotify = new Spotify(keys.spotify);
-var spotify = new Spotify({
-    id: "ae22465ed5154cb2b463c3daa3595087",
-    secret: "4b2408518685437eb3234f95ba83545a"
-});
+var spotify = new Spotify(keys.spotify);
 
 // Next, we store the text given to us from the command line.
 var input1 = process.argv[2];
 var input2 = process.argv[3];
 
 
+//the loop below will replace spaces in the users query with a plus sign that
+//is necessary for the API searches to work as anything after a space is not actually queried
+//so in the command node liri.js concert-this red hot chili peppers 
+// is interpreted by the URL query as red+hot+chili+peppers
+for (var i = 4; i < process.argv.length; i++) {
+    input2 = input2 + "+" + process.argv[i]
+}
+
+
+
 function userCommand(input1, input2) {
+    var input2 = input2.split(' ').join('+');
     switch (input1) {
         case "concert-this":
             concertThis();
@@ -103,14 +111,16 @@ function spotifyThisSong() {
     spotify
         .search({
             type: 'track',
-            query: 'All+the+Small+Things'
+            query: input2,
+            limit: 1
         })
-        .then(function (response) {
-            //console.log(response);
+        .then(function (error, data) {
+            if (error) {
+                console.log(error)
+            }
+            console.log(data);
         })
-        .catch(function (err) {
-            console.log(err);
-        });
+
 
 }
 // 2. `node liri.js spotify-this-song '<song name here>'`
