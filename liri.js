@@ -17,26 +17,13 @@ var spotify = new Spotify({
 
 
 
-// `node liri.js movie-this '<movie name here>'`
-
-// * This will output the following information to your terminal/bash window:
-
-//   ```
-//     * Title of the movie.
-//     * Year the movie came out.
-//     * IMDB Rating of the movie.
-//     * Rotten Tomatoes Rating of the movie.
-//     * Country where the movie was produced.
-//     * Language of the movie.
-//     * Plot of the movie.
-//     * Actors in the movie.
-//   ```
-
-// * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-
-
+//movie-this <movie title> command, spaces need to have a + sign or %20
 if (input1 === "movie-this") {
-    axios.get("http://www.omdbapi.com/?t=remember%20the%20titans&y=&plot=short&apikey=trilogy").then(
+    //If no movie is input than Mr. Nobody will be the default movie
+    if (!input2) {
+        input2 = "Mr.+Nobody"
+    }
+    axios.get("http://www.omdbapi.com/?t=" + input2 + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
             console.log("The movie's Title is: " + response.data.Title);
             console.log("The movie's premiere year is: " + response.data.Year);
@@ -47,6 +34,7 @@ if (input1 === "movie-this") {
             console.log("The movie's Plot: " + response.data.Plot);
             console.log("The Actors in the Movie: " + response.data.Actors);
         }
+
     );
 
 }
