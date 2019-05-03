@@ -38,14 +38,14 @@ var spotify = new Spotify({
 if (input1 === "movie-this") {
     axios.get("http://www.omdbapi.com/?t=remember%20the%20titans&y=&plot=short&apikey=trilogy").then(
         function (response) {
-            console.log("The movie's rating is: " + response.data.Title);
-            console.log("The movie's rating is: " + response.data.Year);
-            console.log("The movie's rating is: " + response.data.Rated);
-            console.log("The movie's rating is: " + response.data.Title);
-            console.log("The movie's rating is: " + response.data.Country);
-            console.log("The movie's rating is: " + response.data.Language);
-            console.log("The movie's rating is: " + response.data.Plot);
-            console.log("The movie's rating is: " + response.data.Actors);
+            console.log("The movie's Title is: " + response.data.Title);
+            console.log("The movie's premiere year is: " + response.data.Year);
+            console.log("The movie's IMBD rating is: " + response.data.Ratings[0].Value);
+            console.log("The movie's Rotten Tomatoes score is: " + response.data.Ratings[1].Value);
+            console.log("The movie's Country of origin is: " + response.data.Country);
+            console.log("The movie's inherent Language is: " + response.data.Language);
+            console.log("The movie's Plot: " + response.data.Plot);
+            console.log("The Actors in the Movie: " + response.data.Actors);
         }
     );
 
