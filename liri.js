@@ -24,14 +24,13 @@ for (var i = 4; i < process.argv.length; i++) {
 function spotifyThisSong() {
     spotify.search({
             type: 'track',
-            query: 'Rocket Man',
+            query: input2,
             limit: 1
         }, function (err, data) {
             if (err) {
                 return console.log("Damage Critical: " + err);
             }
             //want to shorten this part up find a way to combine
-            console.log(data.tracks.items)
             console.log("-------------------------------------\n" + "Song Name: " + data.tracks.items[0].name + "\n-------------------------------------\n" +
                 "The Song is by: " + data.tracks.items[0].artists[0].name +
                 "\n-------------------------------------\n" + "This Album of  the song is called: " +
@@ -42,12 +41,8 @@ function spotifyThisSong() {
             });
     }
 
-    spotifyThisSong()
 
     function userChoice(input1, input2) {
-        if (input2) {
-            var input2 = input2.split(' ').join('+');
-        }
         switch (input1) {
             case "concert-this":
                 concertThis();
@@ -114,7 +109,7 @@ function spotifyThisSong() {
         axios.get("https://rest.bandsintown.com/artists/" + input2 + "/events?app_id=codingbootcamp").then(
             function (response) {
                 //console.log();
-                //SPACES NEED TO BE ENCODED WITH A "%20" INSIDE OF THE URL
+                //SPACES NEED TO BE ENCODED WITH A "%20" or "+" INSIDE OF THE URL
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].venue.name)
                     console.log(response.data[i].venue.city)
@@ -128,33 +123,3 @@ function spotifyThisSong() {
         );
     }
 
-
-
-    //function to display spotifytracks
-    // function spotifyThisSong() {
-    //     spotify
-    //         .search({
-    //             type: 'track',
-    //             query: input2,
-    //             limit: 1
-    //         })
-    //         .then(function (data) {
-    //             console.log(data);
-    //         })
-    //         .catch(function (err) {
-    //             console.log(err)
-    //         })
-
-
-    // }
-    // 2. `node liri.js spotify-this-song '<song name here>'`
-
-    //    * This will show the following information about the song in your terminal/bash window
-
-    //      * Artist(s)
-
-    //      * The song's name
-
-    //      * A preview link of the song from Spotify
-
-    //      * The album that the song is from
