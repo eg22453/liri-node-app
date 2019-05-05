@@ -8,6 +8,11 @@ This project is a helpful introduction on the processa and usability of Node.js 
 ## Screenshots
 Include logo/demo screenshot etc.
 
+![pic1](https://user-images.githubusercontent.com/8785431/57201592-9a6eb180-6f60-11e9-918c-3e9d4ad93a63.png)
+![pic2](https://user-images.githubusercontent.com/8785431/57201602-b2decc00-6f60-11e9-8fb9-71fcc7dfde2c.png)
+![pic3](https://user-images.githubusercontent.com/8785431/57201603-b40ff900-6f60-11e9-9439-4350070af541.png)
+![pic4](https://user-images.githubusercontent.com/8785431/57201605-b5412600-6f60-11e9-8603-19e93e0c71de.png)
+
 ## Tech/framework used
  Javascript
  APIs: OMDB (for movie information), Spotify (for song information), BandsInTown (for concert information)
