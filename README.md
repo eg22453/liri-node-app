@@ -13,6 +13,14 @@ Include logo/demo screenshot etc.
 ![pic3](https://user-images.githubusercontent.com/8785431/57201603-b40ff900-6f60-11e9-9439-4350070af541.png)
 ![pic4](https://user-images.githubusercontent.com/8785431/57201605-b5412600-6f60-11e9-8603-19e93e0c71de.png)
 
+##Command line in ACTION
+
+![function1](https://user-images.githubusercontent.com/8785431/57202303-6ea3f980-6f69-11e9-82fd-4f2def86ff6b.png)
+![function2](https://user-images.githubusercontent.com/8785431/57202304-6fd52680-6f69-11e9-8ebe-916131de231f.png)
+![function3](https://user-images.githubusercontent.com/8785431/57202305-71065380-6f69-11e9-914b-5739912f2dbf.png)
+![function4](https://user-images.githubusercontent.com/8785431/57202308-72378080-6f69-11e9-8c22-0bf6d1322f78.png)
+
+
 ## Tech/framework used
  Javascript
  APIs: OMDB (for movie information), Spotify (for song information), BandsInTown (for concert information)
