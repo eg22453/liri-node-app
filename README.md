@@ -4,6 +4,7 @@ help of Node.js. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Int
 
 ## Motivation
 This project is a helpful introduction on the processa and usability of Node.js and API integration into a web application.
+Additionally, this project demonstrates the process of gaining user input from the command line and returning relevent data.
 
 ## Screenshots
 Include logo/demo screenshot etc.
